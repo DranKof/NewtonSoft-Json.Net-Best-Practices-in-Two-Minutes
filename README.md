@@ -94,9 +94,14 @@ internal class Employee : Person
 
 # Create an Overarching Data Class
 
-Create a class that contains all your data. You could use a list, but that works best when it's only one data type or lots of code to deserialize it back from generic object types if you deside to merge mixed objects in a single list. The easiest way is just one class with lists for each of the various data types you're using.
-
-Make sure just the serialized data is stored inside, then when you are ready you can serialize and deserialize it.
+Create a class that contains all your data. You could use a list, but that only works well when you're dealing with one data type. The easiest way is just one class with lists for each of the various data types you're using, something like this:
+```cs
+internal class DataSet {
+	public List<Player> People { get; private set; } = new List<Person>();
+	public List<Location> Locations { get; private set; } = new List<Location>();
+}
+```
+- Once you have your data class ready, then you will be ready to serialize and deserialize it in a single line of code!
 
 # Serialize
 
