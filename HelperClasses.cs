@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace DStults.Json
 {
-	public class Player
+	internal class Player
 	{
 		public string Name { get; private set; }
 		public int HP { get; private set; }
@@ -28,7 +28,7 @@ namespace DStults.Json
 
 	}
 
-	public class Item
+	internal class Item
 	{
 		public string Name { get; private set; }
 
@@ -41,7 +41,7 @@ namespace DStults.Json
 		
 	}
 
-	public class Weapon : Item
+	internal class Weapon : Item
 	{
 		public int Damage { get; private set; }
 
@@ -54,7 +54,7 @@ namespace DStults.Json
 
 	}
 
-	public class Armor : Item
+	internal class Armor : Item
 	{
 		public int Defense { get; private set; }
 
@@ -67,12 +67,12 @@ namespace DStults.Json
 
 	}
 
-	public class PersonV1
+	internal class PersonV1
 	{
 		public string Name { get; private set; }
 	}
 
-	public class PersonV2a
+	internal class PersonV2a
 	{
 		public string Name { get; private set; }
 		public int Age { get; private set; }
@@ -95,7 +95,7 @@ namespace DStults.Json
 		public override string ToString() => $"{Name}({Age})";
 	}
 
-	public class PersonV2
+	internal class PersonV2
 	{
 		public string Name { get; private set; }
 		public int Age { get; private set; }
@@ -109,7 +109,7 @@ namespace DStults.Json
 
 	}
 
-	public class PersonV3 : PersonV2
+	internal class PersonV3 : PersonV2
 	{
 		public PersonV3 Parent { get; private set; }
 
@@ -143,7 +143,7 @@ namespace DStults.Json
 
 	}
 
-	public class PersonV4
+	internal class PersonV4
 	{
 		public string Name { get; private set; }
 		public PersonV4 Parent { get; private set; }
@@ -177,7 +177,7 @@ namespace DStults.Json
 		public override string ToString() => $"{Name}{GetParent()}{GetPartner()}";
 	}
 
-	public class PersonV4b
+	internal class PersonV4b
 	{
 		public string Name { get; private set; }
 		public PersonV4b Parent { get; private set; }
@@ -204,7 +204,7 @@ namespace DStults.Json
 		public override string ToString() => $"{Name}{GetParent()}{GetPartner()}";
 	}
 
-	public class PersonV5
+	internal class PersonV5
 	{
 		public string Name { get; private set; }
 		public int Age { get; private set; }
@@ -234,7 +234,7 @@ namespace DStults.Json
 		public override string ToString() => $"{Name}{GetParent()}";
 	}
 
-	public class Employee
+	internal class Employee
 	{
 		public string Name { get; private set; }
 		public Employee Boss { get; private set; }
@@ -269,7 +269,7 @@ namespace DStults.Json
 
 	}
 
-	public class Employee2
+	internal class Employee2
 	{
 		public string Name { get; private set; }
 		public Employee2 Boss { get; private set; }
@@ -305,7 +305,7 @@ namespace DStults.Json
 
 	}
 
-	public class PlayerAdvanced : Player
+	internal class PlayerAdvanced : Player
 	{
 
 		public Player Target { get; private set; }
@@ -327,7 +327,7 @@ namespace DStults.Json
 
 	}
 
-	public class DataSet {
+	internal class DataSet {
 		public List<Player> Players { get; private set; } = new List<Player>();
 		public List<Location> Locations { get; private set; } = new List<Location>();
 
@@ -356,7 +356,7 @@ namespace DStults.Json
 		}
 	}
 
-	public class Location
+	internal class Location
 	{
 		public string Name { get; private set; }
 		public string Description { get; private set; }

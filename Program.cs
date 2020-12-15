@@ -28,15 +28,15 @@ namespace DStults.Json
 		static void Main()
 		{
 			GoldBar();
-			//Basic_1_SingleObjectTests();
-			//Basic_2_CollectionTests();
-			//Intermediate_1_PrivateSetters();
-			//Intermediate_2_DefaultConstructor();
-			//Intermediate_3_BasicRecursion();
-			//Intermediate_4_CircularRecursion();
-			//Advanced_1_RecursionWithCollections();
-			//Advanced_2_SimplePolymorphism();
-			//Advanced_3_MixedPolymorphism();
+			Basic_1_SingleObjectTests();
+			Basic_2_CollectionTests();
+			Intermediate_1_PrivateSetters();
+			Intermediate_2_DefaultConstructor();
+			Intermediate_3_BasicRecursion();
+			Intermediate_4_CircularRecursion();
+			Advanced_1_RecursionWithCollections();
+			Advanced_2_SimplePolymorphism();
+			Advanced_3_MixedPolymorphism();
 			Advanced_4_MixedDataset();
 		}
 
@@ -663,17 +663,17 @@ namespace DStults.Json
 			myData1.Players.Add(player3);
 			myData1.Players.Add(player4);
 
-			JsonSerializerSettings settings1 = new JsonSerializerSettings
+			JsonSerializerSettings settings = new JsonSerializerSettings
 			{
 				ContractResolver = new PrivateSetResolver(),
 				PreserveReferencesHandling = PreserveReferencesHandling.Objects,
 				TypeNameHandling = TypeNameHandling.Objects,
 				ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
 			};
-			string json1 = JsonConvert.SerializeObject(myData1, Formatting.Indented, settings1);
-			DataSet myData2 = JsonConvert.DeserializeObject<DataSet>(json1, settings1);
+			string json = JsonConvert.SerializeObject(myData1, Formatting.Indented, settings);
+			DataSet myData2 = JsonConvert.DeserializeObject<DataSet>(json, settings);
 			
-			DrawJson(json1);
+			DrawJson(json);
 
 			Console.WriteLine("\n  DataSet Contents:");
 			Console.Write(myData1.DumpInfo());
