@@ -97,7 +97,7 @@ internal class Employee : Person
 Create a class that contains all your data. You could use a list, but that only works well when you're dealing with one data type. The easiest way is just one class with lists for each of the various data types you're using, something like this:
 ```cs
 internal class DataSet {
-	public List<Player> People { get; private set; } = new List<Person>();
+	public List<Person> People { get; private set; } = new List<Person>();
 	public List<Location> Locations { get; private set; } = new List<Location>();
 }
 ```
